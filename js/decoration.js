@@ -5,7 +5,7 @@ class Decoration {
         this.plantPos = { x: plantPosX, y: plantPosY };
         this.plantVelX = plantVelX;
         this.gameSize = gameSize;
-        this.imgsArr = ['../img/plantas1.png', '../img/plantas2.png', `../img/stone.png`]
+        this.imgsArr = ['./img/plantas1.png', './img/plantas2.png', `./img/stone.png`]
         this.imgURl = this.getRandomImg();
         this.plantSize = { w: plantWidth, h: plantHeight };
         this.imageInstance = undefined,
@@ -27,9 +27,9 @@ class Decoration {
     }
 
     getRandomImg() {
-
+        //return Math.floor(Math.random() * (max - min + 1) + min)
         const imageindex = Math.floor(Math.random() * ((this.imgsArr.length + 1) - 1))
-
+        console.log(imageindex)
         return this.imgsArr[imageindex]
     }
 

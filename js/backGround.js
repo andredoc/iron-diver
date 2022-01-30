@@ -14,7 +14,7 @@ class Background {
     }
     init() {
         this.imageInstance = new Image();
-        this.imageInstance.src = `../img/fondov1.png`;
+        this.imageInstance.src = `./img/fondov1.png`;
 
     }
     draw() {

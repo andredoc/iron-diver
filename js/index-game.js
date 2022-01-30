@@ -32,11 +32,8 @@ const gameIronHackDiver = {
     ratioHeigth: 1.8,
     ratioPosX: 1.8,
     ratioPosY: 1.8,
-    ratioSx: 1.8,
+    ratioSx: 1.8,  // para Bubbles // drawEquina() //drawLogoDiver
     ratioSy: 1.8,
-
-
-
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +46,7 @@ const gameIronHackDiver = {
         this.canvasDom = document.getElementById(`canvasIronDiver`)
         this.canvasDom.addEventListener("click", () => {
             this.hasStarted = true
-            let gameSound = new Audio(`../sounds/gameSoundgggg.mp3`)
+            let gameSound = new Audio(`./sounds/gameSoundgggg.mp3`)
             gameSound.play()
             gameSound.volume = 1
         })
@@ -154,7 +151,7 @@ const gameIronHackDiver = {
         this.waves.draw()
     },
     createStarter() {
-        this.starter = new Starter(this.ctx, 1 * this.ratioPosX, 1 * this.ratioPosY, this.canvasSize.w, this.canvasSize.h, this.canvasSize, '../img/starter.png')
+        this.starter = new Starter(this.ctx, 1 * this.ratioPosX, 1 * this.ratioPosY, this.canvasSize.w, this.canvasSize.h, this.canvasSize, './img/starter.png')
     },
     createPlayer() {
         this.player = new Player(this.ctx, 20 * this.ratioPosX, 230 * this.ratioPosY, 260 * this.ratioWidth, 420 * this.ratioHeigth, this.canvasSize, this.playerLifes)
@@ -170,17 +167,17 @@ const gameIronHackDiver = {
 
 
         if (this.framesCounter % framesLimitLevel1A === 0) {
-            this.enemyLevel1.push(new Enemy(this.ctx, x, 600 * this.ratioPosY, (260 * .80) * this.ratioWidth, (420 * .8) * this.ratioHeigth, this.canvasSize, null, 3, '../img/enemy_level_1_A_walk.png'))
+            this.enemyLevel1.push(new Enemy(this.ctx, x, 600 * this.ratioPosY, (260 * .80) * this.ratioWidth, (420 * .8) * this.ratioHeigth, this.canvasSize, null, 3, './img/enemy_level_1_A_walk.png'))
 
         }
         if (this.framesCounter % framesLimitLevel1A === 0) {
-            this.enemyLevel1.push(new Enemy(this.ctx, x, 520 * this.ratioPosY, (260 * .80) * this.ratioWidth, (420 * .8) * this.ratioHeigth, this.canvasSize, null, 5, '../img/enemy_level_1_A_walk.png'))
+            this.enemyLevel1.push(new Enemy(this.ctx, x, 520 * this.ratioPosY, (260 * .80) * this.ratioWidth, (420 * .8) * this.ratioHeigth, this.canvasSize, null, 5, './img/enemy_level_1_A_walk.png'))
         }
         if (this.framesCounter % framesLimitLevel2 === 0) {
-            this.enemyLevel2.push(new Enemy(this.ctx, x, 270 * this.ratioPosY, 284 * this.ratioWidth, 189 * this.ratioHeigth, this.canvasSize, null, 7, '../img/enemy_level_2_walk.png'))
+            this.enemyLevel2.push(new Enemy(this.ctx, x, 270 * this.ratioPosY, 284 * this.ratioWidth, 189 * this.ratioHeigth, this.canvasSize, null, 7, './img/enemy_level_2_walk.png'))
         }
         if (this.framesCounter % framesLimitLevel2 === 0) {
-            this.enemyLevel2.push(new Enemy(this.ctx, x, 400 * this.ratioPosY, 284 * this.ratioWidth, 189 * this.ratioHeigth, this.canvasSize, null, 5, '../img/enemy_level_2_walk.png'))
+            this.enemyLevel2.push(new Enemy(this.ctx, x, 400 * this.ratioPosY, 284 * this.ratioWidth, 189 * this.ratioHeigth, this.canvasSize, null, 5, './img/enemy_level_2_walk.png'))
         }
 
 
@@ -234,7 +231,7 @@ const gameIronHackDiver = {
     },
     initImages() {
         const esquinaImg = new Image()
-        esquinaImg.src = '../img/faro.png';
+        esquinaImg.src = './img/faro.png';
         this.ejemplo.push(esquinaImg)
 
     },
@@ -246,7 +243,7 @@ const gameIronHackDiver = {
     //LOGO DIVER
     initImages2() {
         const lifeBarImg = new Image()
-        lifeBarImg.src = '../img/life_logo.png'
+        lifeBarImg.src = './img/life_logo.png'
         this.images2.push(lifeBarImg)
     },
     drawLogoDiver() {
@@ -269,7 +266,7 @@ const gameIronHackDiver = {
     },
     drawRemainingAnchers() {
         const ancherImage = new Image()
-        ancherImage.src = `../img/ancher.png`
+        ancherImage.src = `./img/ancher.png`
         this.ctx.drawImage(ancherImage, 1100 * this.ratioPosX, 20 * this.ratioPosY, 100, 100)
         const remainingAncherText = `${this.remainAttacksOne}`
         this.ctx.fillStyle = 'black'
@@ -332,7 +329,7 @@ const gameIronHackDiver = {
                     enemies.splice(i, 1)
                     this.player.attackOne.splice(j, 1)
                     this.score += 10
-                    let playerScore = new Audio(`../sounds/impactEnemy.mp3`)
+                    let playerScore = new Audio(`./sounds/impactEnemy.mp3`)
                     playerScore.play()
                     playerScore.volume = 1
                 }
@@ -379,7 +376,7 @@ const gameIronHackDiver = {
             ) {
                 hitPlayer = true;
                 elm.hitPlayer = true;
-                let playerHit = new Audio(`../sounds/playerLoselifes.mp3`)
+                let playerHit = new Audio(`./sounds/playerLoselifes.mp3`)
                 playerHit.play()
                 playerHit.volume = 1
             }
@@ -410,8 +407,10 @@ const gameIronHackDiver = {
     gameOver() {
         if (this.playerLifes === 0) {
             this.drawGameOverScreen()
+            // clearInterval(this.interval)
+
         }
-        let gameOver = new Audio(`../sounds/Gameover_sound.mp3`)
+        let gameOver = new Audio(`./sounds/Gameover_sound.mp3`)
         gameOver.play()
         gameOver.volume = 0.1
     },
@@ -433,7 +432,7 @@ const gameIronHackDiver = {
             if (key === 'ArrowUp' && this.player.isMovingUp === false) {
                 this.player.moveUp()
                 this.player.isMovingUp = true
-                let playerJump = new Audio(`../sounds/SALTO.mp3`)
+                let playerJump = new Audio(`./sounds/SALTO.mp3`)
                 playerJump.play()
                 playerJump.volume = 1
                 setTimeout(() => {
@@ -443,7 +442,7 @@ const gameIronHackDiver = {
             key === `ArrowDown` ? this.player.moveDown() : null
             if (key === ` ` && this.player.canShoot === true) {
                 this.remainAttacksOne = this.player.shoot()
-                let playerAttackOne = new Audio(`../sounds/impact_long_distance.wav`)
+                let playerAttackOne = new Audio(`./sounds/impact_long_distance.wav`)
                 playerAttackOne.play()
                 playerAttackOne.volume = 1
                 if (this.remainAttacksOne === 0) {
@@ -457,7 +456,7 @@ const gameIronHackDiver = {
             }
             if (key === `w` && this.player.attackTwo === false) {
                 this.player.attackTwo = true
-                let playerClose = new Audio(`../sounds/close_attack.mp3`)
+                let playerClose = new Audio(`./sounds/close_attack.mp3`)
                 playerClose.play()
                 playerClose.volume = 1
                 setTimeout(() => {

@@ -5,10 +5,10 @@ class Seagul {
         this.seagulPos = { x: seagulPosX, y: seagulPosY };
         this.seagulVelX = seagulVelX;
         this.gameSize = gameSize;
-        this.imgl = `../img/gaviotas.png`
+        this.imgl = `./img/gaviotas.png`
         this.seagulSize = { w: seagulWidth, h: seagulHeight };
         this.seImageInstance = undefined,
-        
+
             this.init()
     }
     init() {
@@ -27,6 +27,6 @@ class Seagul {
         }
         this.seagulPos.x -= this.seagulVelX;
     }
-    
+
 
 }

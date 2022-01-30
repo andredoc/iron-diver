@@ -25,13 +25,13 @@ class Player {
     /////INICIALIZAR//
     init() {
         this.imageInstance = new Image()
-        this.imageInstance.src = `../img/player_walking.png`
+        this.imageInstance.src = `./img/player_walking.png`
         this.imageInstance.frames = 3
         this.imageInstance.framesIndex = 0
         this.attackImageInstance = new Image()
-        this.attackImageInstance.src = '../img/punch.png'
+        this.attackImageInstance.src = './img/punch.png'
         this.jumpImageInstance = new Image()
-        this.jumpImageInstance.src = `../img/jump.png`
+        this.jumpImageInstance.src = `./img/jump.png`
 
     }
     ///CREAR///
