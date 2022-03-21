@@ -13,6 +13,4 @@ class Starter {
         this.ctx.drawImage(this.seImageInstance, this.starterPos.x, this.starterPos.y, this.starterSize.w, this.starterSize.h);
 
     }
-
-
 }

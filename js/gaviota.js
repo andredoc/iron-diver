@@ -27,6 +27,4 @@ class Seagul {
         }
         this.seagulPos.x -= this.seagulVelX;
     }
-
-
 }

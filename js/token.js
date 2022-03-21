@@ -5,8 +5,6 @@ class Token {
         this.ctx = ctx
         this.tokenPos = { x: tokenPosX, y: tokenPosY }
         this.tokenSize = { w: tokenWidth, h: tokenHeight }
-        //this.tokenVel = { x: 10, y: 1 }
-        //this.tokenPhysics = { gravity: .4 }
         this.gameSize = gameSize
         this.imageInstance = undefined
 
@@ -31,7 +29,4 @@ class Token {
 
         this.checkCollision()
     }
-
-    //checkCollision() {}
-
 }

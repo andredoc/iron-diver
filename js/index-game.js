@@ -35,12 +35,6 @@ const gameIronHackDiver = {
     ratioSx: 1.8,  // para Bubbles // drawEquina() //drawLogoDiver
     ratioSy: 1.8,
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
     //INICIALIZACION
     init() {
         this.canvasDom = document.getElementById(`canvasIronDiver`)
@@ -60,14 +54,6 @@ const gameIronHackDiver = {
         this.canvasDom.setAttribute('width', this.canvasSize.w)
         this.canvasDom.setAttribute('height', this.canvasSize.h)
     },
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
     //START////
 
@@ -102,7 +88,6 @@ const gameIronHackDiver = {
                 this.starter.draw()
             }
         }, 1000 / this.FPS)
-
     },
 
     reset() {
@@ -115,16 +100,6 @@ const gameIronHackDiver = {
             this.drawGameOverScreen()
         }, 60000)               // ver el tiempo de duración del juego
     },
-
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
     //CREAR//
     drawAll() {
@@ -179,8 +154,6 @@ const gameIronHackDiver = {
         if (this.framesCounter % framesLimitLevel2 === 0) {
             this.enemyLevel2.push(new Enemy(this.ctx, x, 400 * this.ratioPosY, 284 * this.ratioWidth, 189 * this.ratioHeigth, this.canvasSize, null, 5, './img/enemy_level_2_walk.png'))
         }
-
-
     },
 
     createPlant() {
@@ -233,7 +206,6 @@ const gameIronHackDiver = {
         const esquinaImg = new Image()
         esquinaImg.src = './img/faro.png';
         this.ejemplo.push(esquinaImg)
-
     },
 
     drawEsquina() {
@@ -274,14 +246,6 @@ const gameIronHackDiver = {
         this.ctx.fillText(remainingAncherText, 1180 * this.ratioPosX, 65 * this.ratioPosY)
     },
 
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
     ////LIMPIAR//
     clearAll() {
         this.ctx.clearRect(0, 0, this.canvasSize.w, this.canvasSize.h)
@@ -296,20 +260,12 @@ const gameIronHackDiver = {
     },
     clearPlant2() {
         this.plant2 = this.plant2.filter(elm => elm.plantPos.x + elm.plantSize.w >= 0)
-
     },
 
     clearEnemy() {
         this.enemyLevel1 = this.enemyLevel1.filter(elm => elm.enemyPos.x + elm.enemySize.w >= 0)
         this.enemyLevel2 = this.enemyLevel2.filter(elm => elm.enemyPos.x + elm.enemySize.w >= 0)
     },
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
     //COLISIONES
     ancherCollision() {
@@ -340,7 +296,6 @@ const gameIronHackDiver = {
     punchCollision() {
         this.checkPunchCollision(this.enemyLevel1)
         this.checkPunchCollision(this.enemyLevel2)
-
     },
 
     //COLISIONES CON GOLPE DE CERCA
@@ -355,7 +310,6 @@ const gameIronHackDiver = {
                 ) {
                     enemies.splice(i, 1)
                     this.score += 30
-
                 }
             });
         }
@@ -401,7 +355,6 @@ const gameIronHackDiver = {
             this.ctx.font = `150px arial`
             this.ctx.fillText(scoreNum, 1100, 1100)
         }, 4)
-
     },
 
     gameOver() {
@@ -414,14 +367,6 @@ const gameIronHackDiver = {
         gameOver.play()
         gameOver.volume = 0.1
     },
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
     ////MOVER
     setEventHandlers() {
@@ -463,19 +408,6 @@ const gameIronHackDiver = {
                     this.player.attackTwo = false
                 }, 300)
             }
-
-
-
-
-
         })
     },
-
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 }

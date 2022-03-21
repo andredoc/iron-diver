@@ -15,7 +15,7 @@ class Enemy {
         this.hitPlayer = false // No he golpeado al jugador
         this.init()
     }
-    /////INICIOALIZAR//
+    //INICIALIZAR
     init() {
         this.imageInstance = new Image()
         this.imageInstance.src = this.imgUrl
@@ -23,7 +23,7 @@ class Enemy {
         this.imageInstance.framesIndex = 0
     }
 
-    ///CREAR///
+    //CREAR
     draw(framesCounter) {
         this.ctx.drawImage(
             this.imageInstance,
@@ -44,7 +44,7 @@ class Enemy {
         }
         this.enemyPos.x -= this.enemyVelX;
     }
-//ANIMATE ENEMY
+    //ANIMATE ENEMY
     animate(framesCounter) {
         if (framesCounter % 10 == 0) {
             this.imageInstance.framesIndex++;

@@ -3,8 +3,6 @@ class AttackOne {   // larga distancia
         this.ctx = ctx
         this.attackOnePos = { x: playerPosX, y: playerPosY }
         this.attackOneSize = { w: playerWidth, h: playerHeight }
-
-        //this.attackOnePhysics = { gravity: .4 }
         this.gameSize = gameSize
         this.imageInstance = undefined
         this.attackOneVelX = 10
