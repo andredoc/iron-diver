@@ -5,7 +5,7 @@ This project has been designed, code and thought by a team of two, Andre Documet
 The aim of this project was to challenge us to create a working game using only JavaScript, no libraries, no nothing, just Js and our confined abilities create it.
 Hope you all enjoy it and try to beat our best score of 660 points.
 
-S. Rus
+S. Rus |
 A. Documet
 
 Note: This site is published at https://andredoc.github.io/iron-diver/
