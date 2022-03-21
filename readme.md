@@ -8,6 +8,8 @@ Hope you all enjoy it and try to beat our best score of 660 points.
 S. Rus
 A. Documet
 
+Note: This site is published at https://andredoc.github.io/iron-diver/
+
 # app
 
 This game is generated with JavaScript(ES6) and Canvas.
